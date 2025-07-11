@@ -20,12 +20,11 @@ def transcript():
     if response.status_code != 200:
         return jsonify({"error": "Failed to load YouTube page"}), 500
 
-    # For now, simply return the raw HTML
-    # Replace this with transcript extraction logic if needed
     return response.text
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
+
 
 
